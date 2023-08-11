@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box  {
+      width: 10rem;
+      height: 3rem;
+      border: 1px solid #ccc;   
+    }
+    .box-hidden {
+      display: none;
+    }
+
+    .box-show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h1>
+    toggle diy
+  </h1>
+   <button type="button" id="myBtn">myBtn</button>
+   <div class="box box-hidden" data-hidden = "0" id="myBox">123456789</div>
+
+
+   <script>
+    let myBtn = document.getElementById('myBtn');
+    let myBox = document.getElementById('myBox');
+
+    // myBtn.addEventListener('click',()=>{
+    //   console.log('click ok');
+    //   myBox.style.display = 'block'; 
+
+    // })
+
+    myBtn.addEventListener('click', function () {
+            console.log('okok');
+            let dataHiddenVaule = myBox.getAttribute('data-hidden');
+            // ///////////// (start flag)   >0  /////////////////////////////
+            if (dataHiddenVaule == 1) {
+                myBox.setAttribute('class', 'box box-hidden');
+                myBox.setAttribute('data-hidden', '0');
+            } else {
+                myBox.setAttribute('class', 'box box-show');
+                myBox.setAttribute('data-hidden', '1');
+            }
+        });
+
+
+    
+   </script>
+</body>
+</html>
